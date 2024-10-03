@@ -1,0 +1,129 @@
+
+Gist:
+- Bild kann ausgewählt oder eingegeben werden 
+	- API? 
+	- Input-Ordner 
+	- Drag-And-Drop über GUI? 
+	- Bei vorgegebenem Bild: 
+		- GUI mit Bildgalerie und Selektion 
+- Bild kann zugeschnitten werden mit vorgegebenem Ratio 
+- Text kann mit Font (interne oder extern geladen) beschrieben werden 
+	- Unten/Oben oder beides 
+	- Farbe auswählbar 
+	- Schriftart auswählbar 
+- Format auswählbar 
+	- PNG
+	- JPG 
+	- Weitere? 
+- Speicherort auswählen 
+
+Workflow:
+- 1. Bild (auswählen)
+	- Eigene Eingabe (Ordner)
+		- Bild aus Liste mit Namen auswählen => Punkt 2.
+		- Keine Bilder vorhanden? 
+			- Hinweistext angeben und nochmal scannen bzw. 
+	- Zufällig aus Bild-Bibliothek
+		- GUI öffnen und Bilder anzeigen 
+			- Bild auswählen und bestätigen => Punkt 2.
+	- Drag-And-Drop über GUI? => 2. Punkt 
+- 2. Zuschneiden (auswählen)
+	- Ratio anzeigen 
+		- Zuschneiden? (Empfehlung ja/nein?)
+			- Ja? 
+				- Gewünschtes Ratio aus Liste auslesen und zuschneiden => 3. Punkt
+			- Nein => 3. Punkt
+- 3. Text Positionierung (auswählen)
+	- Oben und Unten 
+		- Abstand Oben/Unten angeben 
+			- wenig 
+			- medium 
+			- viel 
+	- Oben 
+		- Abstand Oben/Unten angeben 
+			- wenig 
+			- medium 
+			- viel 
+	- Unten 
+		- Abstand Oben/Unten angeben 
+			- wenig 
+			- medium 
+			- viel 
+- 4. Text (eingeben)
+	- Eigener Text eingeben => 5. Punkt
+	- In Lückentext eingeben 
+		- Wörter einsetzen => 5. Punkt
+- 5. Font (auswählen)
+	- API 
+		- Fonts aus API ziehen u. anzeigen 
+			- Liste an Fonts anzeigen (und beim Auswählen Beispiel anzeigen?)
+				- Auswählen => 6. Punkt 
+		- Loading Screen dabei (...)
+		- Default case (falls error)
+	- Lokale Font-Library
+		- Liste an Fonts anzeigen (und beim Auswählen Beispiel anzeigen?)
+			- Auswählen => 6. Punkt 
+- 6. Farbe (auswählen)
+	- Eigene Farbe (rgb) => 7. Punkt 
+	- Farbe aus Liste auswählen => 7. Punkt 
+- 7. Format (auswählen)
+	- JPG => 8. Punkt
+	- PNG => 8. Punkt 
+- 8. Speichern 
+	- Output-Ordner (intern)
+	- Ordner auswählen (Tool öffnen)
+
+Tech-Stack:
+- Java 
+- BuildTool 
+	- Maven oder Gradle
+- Libraries 
+	- JavaSwing / AWT oder JavaFX
+		- GUI
+	- ImageIO 
+		- Laden und Speichern von Bildern
+	- Appache Commons Imaging? 
+	- Java Fonts API (AWT)
+		- Text auf Bildern mit Schriftart, Größe und Farbe 
+	- TrueType-Schriftarten
+		- Externe Schriftarten laden 
+	- 
+
+Klassen:
+- MemeGeneratorApp: Hauptklasse
+	- Statisches Durchgehen von Struktur 
+- ImageLoader 
+	- API für Bilder oder Bibliothek 
+	- Input-Ordner auslesen
+- ImageEditor
+	- Zuschneiden 
+	- Ratio feststellen 
+- FontManager 
+	- API für Fonts anfragen 
+	- Interne Fonts 
+	- Font-Liste ausgeben und selektieren 
+- MemeSaver
+	- Speichern von Memes in Ouput-Ordner mit Angabe vom Pfad 
+	- ODER: Ort auswählen zum Speichern 
+- FileManager 
+	- Gibt Listen ein und aus 
+	- Gibt Bilder ein und aus 
+- NetworkManager 
+	- Regelt APIs
+- etc. 
+
+Vorgehen:
+- Semester 05
+	- MVP
+		- Kann mindestens alle Ebenen der Struktur durchgehen und ein Bild mit Text erzeugen 
+	- Dokumentation 
+- Semester 06 
+	- Features hinzufügen 
+	- Testing 
+	- Dokumentation 
+- Dokumentation 
+- Alle Klassen dokumentiert 
+- Alle Libraries beim Import dokumentiert was sie machen 
+- Struktur im Code als Doku wiedergeben 
+- Programmierpatterns/Prinzipien
+- Polymorphie
